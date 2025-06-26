@@ -26,14 +26,14 @@ describe("Questions component", () => {
     const setSelected = vi.fn();
     render(<Questions {...defaultProps} setSelected={setSelected} />);
     fireEvent.click(screen.getByLabelText("Yes"));
-    expect(setSelected).toHaveBeenCalledWith(true);
+    expect(setSelected).toHaveBeenCalledWith("yes");
   });
 
   it("calls setSelected with false when No is clicked", () => {
     const setSelected = vi.fn();
     render(<Questions {...defaultProps} setSelected={setSelected} />);
     fireEvent.click(screen.getByLabelText("No"));
-    expect(setSelected).toHaveBeenCalledWith(false);
+    expect(setSelected).toHaveBeenCalledWith("no");
   });
 
   it("disables the Next button when selected is null", () => {
@@ -42,13 +42,13 @@ describe("Questions component", () => {
   });
 
   it("enables the Next button when selected is not null", () => {
-    render(<Questions {...defaultProps} selected={true} />);
+    render(<Questions {...defaultProps} selected={"yes"} />);
     expect(screen.getByRole("button")).toBeEnabled();
   });
 
   it('displays "Send results" if isLastQuestion is true', () => {
     render(
-      <Questions {...defaultProps} isLastQuestion={true} selected={true} />
+      <Questions {...defaultProps} isLastQuestion={true} selected={"yes"} />
     );
     expect(screen.getByText("Send results")).toBeInTheDocument();
   });
@@ -63,7 +63,7 @@ describe("Questions component", () => {
     render(
       <Questions
         {...defaultProps}
-        selected={true}
+        selected={"yes"}
         handleNextClick={handleNextClick}
       />
     );

@@ -30,11 +30,11 @@ describe("App integration test", () => {
     expect(submitSpy).toHaveBeenCalledTimes(1);
 
     expect(submitSpy).toHaveBeenCalledWith([
-      { questionNo: 0, question: QUESTIONS[0], response: true },
-      { questionNo: 1, question: QUESTIONS[1], response: true },
-      { questionNo: 2, question: QUESTIONS[2], response: true },
-      { questionNo: 3, question: QUESTIONS[3], response: true },
-      { questionNo: 4, question: QUESTIONS[4], response: true },
+      { No: 1, question: QUESTIONS[0], response: "yes" },
+      { No: 2, question: QUESTIONS[1], response: "yes" },
+      { No: 3, question: QUESTIONS[2], response: "yes" },
+      { No: 4, question: QUESTIONS[3], response: "yes" },
+      { No: 5, question: QUESTIONS[4], response: "yes" },
     ]);
   });
 });

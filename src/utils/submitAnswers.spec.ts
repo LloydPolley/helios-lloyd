@@ -4,14 +4,14 @@ import type { AnswerType } from "../types";
 
 const mockData: AnswerType[] = [
   {
-    questionNo: 1,
+    No: 1,
     question: "Do you smoke?",
-    response: true,
+    response: "yes",
   },
   {
-    questionNo: 2,
+    No: 2,
     question: "Do you drink?",
-    response: false,
+    response: "no",
   },
 ];
 

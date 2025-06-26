@@ -4,7 +4,7 @@ import Questions from "./components/Questions/Questions";
 import Nav from "./components/Nav/Nav";
 import { submitAnswers } from "./utils/submitAnswers";
 
-import type { AnswerType } from "./types";
+import type { AnswerType, SelectValues } from "./types";
 
 import "./App.css";
 
@@ -18,12 +18,12 @@ const QUESTIONS = [
 
 function App() {
   const [questionNumber, setQuestionNumber] = useState<number>(0);
-  const [selected, setSelected] = useState<boolean | null>(null);
+  const [selected, setSelected] = useState<SelectValues>(null);
   const [answers, setAnswers] = useState<AnswerType[]>([]);
 
-  const handleAnswer = async (response: boolean) => {
+  const handleAnswer = async (response: SelectValues) => {
     const newAnswer = {
-      questionNo: questionNumber,
+      No: questionNumber + 1,
       question: QUESTIONS[questionNumber],
       response,
     };

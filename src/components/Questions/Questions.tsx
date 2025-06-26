@@ -1,4 +1,5 @@
 import "./Questions.css";
+import type { SelectValues } from "../../types";
 
 const Questions = ({
   isLastQuestion,
@@ -9,8 +10,8 @@ const Questions = ({
 }: {
   isLastQuestion: boolean;
   currentQuestion: string;
-  selected: boolean | null;
-  setSelected: (response: boolean | null) => void;
+  selected: SelectValues;
+  setSelected: (response: "yes" | "no") => void;
   handleNextClick: () => void;
 }) => {
   return (
@@ -24,8 +25,8 @@ const Questions = ({
                 type="radio"
                 name="answer"
                 value="yes"
-                checked={selected === true}
-                onChange={() => setSelected(true)}
+                checked={selected === "yes"}
+                onChange={() => setSelected("yes")}
               />
               Yes
             </label>
@@ -34,8 +35,8 @@ const Questions = ({
                 type="radio"
                 name="answer"
                 value="no"
-                checked={selected === false}
-                onChange={() => setSelected(false)}
+                checked={selected === "no"}
+                onChange={() => setSelected("no")}
               />
               No
             </label>

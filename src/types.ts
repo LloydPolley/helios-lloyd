@@ -1,5 +1,7 @@
 export type AnswerType = {
-  questionNo: number;
+  No: number;
   question: string;
-  response: boolean;
+  response: "yes" | "no" | null;
 };
+
+export type SelectValues = "yes" | "no" | null;
