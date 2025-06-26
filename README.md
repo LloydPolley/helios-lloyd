@@ -10,3 +10,8 @@
 
 3. Run tests:
    npm run test
+
+## Comments
+
+- Saved answers into state — could move over to local storage for persistent answers users can return to later
+- Added empty links in footer
