@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import App from "./App";
-import * as submitModule from "./utils/submitAnswers"; // to spy on submitAnswers
+import * as submitModule from "./utils/submitAnswers";
 import { vi } from "vitest";
 
 describe("App integration test", () => {
