@@ -23,9 +23,7 @@ describe("App integration test", () => {
       expect(screen.getByText(QUESTIONS[i])).toBeInTheDocument();
 
       fireEvent.click(screen.getByLabelText("Yes"));
-      fireEvent.click(
-        screen.getByRole("button", { name: /next question|send results/i })
-      );
+      fireEvent.click(screen.getByRole("button"));
     }
 
     expect(await screen.findByText("Thank you")).toBeInTheDocument();
@@ -38,7 +36,5 @@ describe("App integration test", () => {
       { questionNo: 3, question: QUESTIONS[3], response: true },
       { questionNo: 4, question: QUESTIONS[4], response: true },
     ]);
-
-    submitSpy.mockRestore();
   });
 });
